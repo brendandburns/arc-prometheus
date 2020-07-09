@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: prometheus-pushgateway
+    chart: prometheus-pushgateway-1.2.10
+    heritage: Helm
+    release: pushgateway
+  name: pushgateway-prometheus-pushgateway
+  namespace: prometheus
+spec:
+  clusterIP: 10.108.24.105
+  externalTrafficPolicy: Cluster
+  ports:
+  - name: http
+    nodePort: 32434
+    port: 9091
+    protocol: TCP
+    targetPort: 9091
+  selector:
+    app: prometheus-pushgateway
+    release: pushgateway
+  sessionAffinity: None
+  type: NodePort
+
