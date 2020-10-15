@@ -99,7 +99,7 @@ subsets:
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: kube3
+  name: jetson
   namespace: prometheus
 subsets:
 - addresses:
