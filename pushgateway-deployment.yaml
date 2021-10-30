@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   labels:
     app: prometheus-pushgateway
-    chart: prometheus-pushgateway-1.2.10
-    heritage: Helm
     release: pushgateway
   name: pushgateway-prometheus-pushgateway
   namespace: prometheus
@@ -29,7 +27,7 @@ spec:
         release: pushgateway
     spec:
       containers:
-      - image: prom/pushgateway:v1.2.0
+      - image: prom/pushgateway:v1.4.2
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
