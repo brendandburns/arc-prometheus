@@ -91,7 +91,7 @@ metadata:
   namespace: prometheus
 subsets:
 - addresses:
-  - ip: 10.10.0.103
+  - ip: 10.10.0.200
   ports:
   - port: 1
     protocol: TCP
