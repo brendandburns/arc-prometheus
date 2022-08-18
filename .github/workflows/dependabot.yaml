@@ -26,7 +26,7 @@ jobs:
         docker build -t "dependabot/dependabot-script" -f Dockerfile .
     - name: Run dependabot
       env:
-        PROJECT_PATH: brendandburns/eraser
+        PROJECT_PATH: brendandburns/arc-prometheus
         PACKAGE_MANAGER: docker
         OPTIONS: |
            { "kubernetes_updates": true }
