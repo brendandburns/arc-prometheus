@@ -72,7 +72,7 @@ spec:
             configMapKeyRef:
               key: plugins
               name: grafana
-        image: grafana/grafana-oss:8.5.5
+        image: grafana/grafana-oss:9.1.0
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 10
