@@ -19,7 +19,7 @@ jobs:
     - name: Checkout dependabot
       run: |
         cd /tmp/
-        git clone https://github.com/brendandburns/dependabot-script
+        git clone https://github.com/dependabot/dependabot-script
     - name: Build image
       run: |
         cd /tmp/dependabot-script
