@@ -2,7 +2,9 @@
 name: ManualDependabot
 
 on:
-  workflow_dispatch:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 9 * * *'
 
 permissions:
   contents: read
@@ -14,8 +16,6 @@ jobs:
       pull-requests: write  # for repo-sync/pull-request to create pull requestsbundle exec ruby ./generic-update-script.rb
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
     - name: Checkout dependabot
       run: |
         cd /tmp/
