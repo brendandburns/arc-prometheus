@@ -37,7 +37,7 @@ spec:
       - args:
         - --volume-dir=/etc/config
         - --webhook-url=http://127.0.0.1:9090/-/reload
-        image: jimmidyson/configmap-reload:v0.2.2
+        image: jimmidyson/configmap-reload:v0.7.1
         imagePullPolicy: IfNotPresent
         name: prometheus-server-configmap-reload
         resources: {}
