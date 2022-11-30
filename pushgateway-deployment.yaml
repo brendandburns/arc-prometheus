@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: pushgateway
-        image: prom/pushgateway:v1.5.0
+        image: prom/pushgateway:v1.5.1
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
