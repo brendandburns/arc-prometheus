@@ -33,6 +33,9 @@ spec:
         heritage: Helm
         release: prometheus
     spec:
+      securityContext:
+        runAsUser: 1002
+        runAsGroup: 1002
       containers:
       - args:
         - --volume-dir=/etc/config
@@ -54,7 +57,8 @@ spec:
         - --web.console.libraries=/etc/prometheus/console_libraries
         - --web.console.templates=/etc/prometheus/consoles
         - --web.enable-lifecycle
-        image: prom/prometheus:v2.39.1
+        - --web.enable-admin-api
+        image: prom/prometheus:v2.40.5
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
@@ -104,6 +108,7 @@ spec:
           defaultMode: 420
           name: prometheus-server
         name: config-volume
-      - emptyDir:
-          sizeLimit: 8G
-        name: storage-volume
+      - name: storage-volume
+        nfs:
+          server: 10.10.0.1
+          path: /mnt/ssd/prometheus
