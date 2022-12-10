@@ -58,7 +58,7 @@ spec:
         - --web.console.templates=/etc/prometheus/consoles
         - --web.enable-lifecycle
         - --web.enable-admin-api
-        image: prom/prometheus:v2.40.5
+        image: prom/prometheus:v2.40.6
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
