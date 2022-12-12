@@ -33,9 +33,6 @@ spec:
         heritage: Helm
         release: prometheus
     spec:
-      securityContext:
-        runAsUser: 1002
-        runAsGroup: 1002
       containers:
       - args:
         - --volume-dir=/etc/config
