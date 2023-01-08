@@ -122,26 +122,26 @@ spec:
           readOnly: true
       dnsPolicy: ClusterFirst
       initContainers:
-      - args:
-        - -c
-        - mkdir -p /var/lib/grafana/dashboards/default && /bin/sh /etc/grafana/download_dashboards.sh
-        command:
-        - /bin/sh
-        image: curlimages/curl:7.86.0
-        imagePullPolicy: IfNotPresent
-        name: download-dashboards
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        volumeMounts:
-        - mountPath: /etc/grafana/download_dashboards.sh
-          name: config
-          subPath: download_dashboards.sh
-        - mountPath: /var/lib/grafana
-          name: storage
-        - mountPath: /certs/
-          name: grafana-certs
-          readOnly: true
+#      - args:
+#        - -c
+#        - mkdir -p /var/lib/grafana/dashboards/default && /bin/sh /etc/grafana/download_dashboards.sh
+#        command:
+#        - /bin/sh
+#        image: curlimages/curl:7.86.0
+#        imagePullPolicy: IfNotPresent
+#        name: download-dashboards
+#        resources: {}
+#        terminationMessagePath: /dev/termination-log
+#        terminationMessagePolicy: File
+#        volumeMounts:
+#        - mountPath: /etc/grafana/download_dashboards.sh
+#          name: config
+#          subPath: download_dashboards.sh
+#        - mountPath: /var/lib/grafana
+#          name: storage
+#        - mountPath: /certs/
+#          name: grafana-certs
+#          readOnly: true
       - env:
         - name: METHOD
           value: LIST
