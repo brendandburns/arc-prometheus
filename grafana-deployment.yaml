@@ -47,7 +47,7 @@ spec:
           value: /tmp/dashboards
         - name: RESOURCE
           value: both
-        image: kiwigrid/k8s-sidecar:1.21.0
+        image: kiwigrid/k8s-sidecar:1.21.1
         imagePullPolicy: IfNotPresent
         name: grafana-sc-dashboard
         resources: {}
@@ -122,26 +122,26 @@ spec:
           readOnly: true
       dnsPolicy: ClusterFirst
       initContainers:
-      - args:
-        - -c
-        - mkdir -p /var/lib/grafana/dashboards/default && /bin/sh /etc/grafana/download_dashboards.sh
-        command:
-        - /bin/sh
-        image: curlimages/curl:7.87.0
-        imagePullPolicy: IfNotPresent
-        name: download-dashboards
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        volumeMounts:
-        - mountPath: /etc/grafana/download_dashboards.sh
-          name: config
-          subPath: download_dashboards.sh
-        - mountPath: /var/lib/grafana
-          name: storage
-        - mountPath: /certs/
-          name: grafana-certs
-          readOnly: true
+#      - args:
+#        - -c
+#        - mkdir -p /var/lib/grafana/dashboards/default && /bin/sh /etc/grafana/download_dashboards.sh
+#        command:
+#        - /bin/sh
+#        image: curlimages/curl:7.87.0
+#        imagePullPolicy: IfNotPresent
+#        name: download-dashboards
+#        resources: {}
+#        terminationMessagePath: /dev/termination-log
+#        terminationMessagePolicy: File
+#        volumeMounts:
+#        - mountPath: /etc/grafana/download_dashboards.sh
+#          name: config
+#          subPath: download_dashboards.sh
+#        - mountPath: /var/lib/grafana
+#          name: storage
+#        - mountPath: /certs/
+#          name: grafana-certs
+#          readOnly: true
       - env:
         - name: METHOD
           value: LIST
@@ -151,7 +151,7 @@ spec:
           value: /etc/grafana/provisioning/datasources
         - name: RESOURCE
           value: both
-        image: kiwigrid/k8s-sidecar:1.21.0
+        image: kiwigrid/k8s-sidecar:1.21.1
         imagePullPolicy: IfNotPresent
         name: grafana-sc-datasources
         resources: {}
