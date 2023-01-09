@@ -127,7 +127,7 @@ spec:
 #        - mkdir -p /var/lib/grafana/dashboards/default && /bin/sh /etc/grafana/download_dashboards.sh
 #        command:
 #        - /bin/sh
-#        image: curlimages/curl:7.86.0
+#        image: curlimages/curl:7.87.0
 #        imagePullPolicy: IfNotPresent
 #        name: download-dashboards
 #        resources: {}
