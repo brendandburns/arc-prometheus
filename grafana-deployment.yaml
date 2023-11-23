@@ -47,7 +47,7 @@ spec:
           value: /tmp/dashboards
         - name: RESOURCE
           value: both
-        image: kiwigrid/k8s-sidecar:1.25.1
+        image: kiwigrid/k8s-sidecar:1.25.2
         imagePullPolicy: IfNotPresent
         name: grafana-sc-dashboard
         resources: {}
@@ -151,7 +151,7 @@ spec:
           value: /etc/grafana/provisioning/datasources
         - name: RESOURCE
           value: both
-        image: kiwigrid/k8s-sidecar:1.25.1
+        image: kiwigrid/k8s-sidecar:1.25.2
         imagePullPolicy: IfNotPresent
         name: grafana-sc-datasources
         resources: {}
