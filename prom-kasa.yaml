@@ -31,7 +31,7 @@ spec:
       - command:
         - python3
         - /prom_kasa.py
-        image: burns.azurecr.io/prom-kasa:v3
+        image: burns.azurecr.io/prom-kasa:v4
         imagePullPolicy: IfNotPresent
         name: prom-kasa
         resources:
